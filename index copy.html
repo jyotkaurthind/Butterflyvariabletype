@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover for Random Motion</title>
+    <style>
+        @font-face {
+            font-family: "BUTTERFLY";
+            src: url("Fonts/BUTTERFLY.ttf");
+            font-weight: 100 900;
+        }
+
+        @font-face {
+        font-family: "GT Pressura" ;
+        src: url(Fonts/GT-Pressura/GT-Pressura-Light-Trial.woff2);
+    }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .body-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: rgb(236, 255, 235);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .body-text{
+        font-family:"GT Pressura" ;
+        font-size: 22px;
+        color: rgb(248, 248, 255);
+        position: absolute;
+        top: 45%;
+        left: 46%
+    }
+
+        .header-container{
+       width: 100%;
+       /* background-image: url(line.png); */
+       position: relative;
+       align-items: center;
+       justify-content: center;
+       padding-top: 0px;
+       z-index: 0;
+    
+    }
+
+        .fly-away-container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            /* gap: 10px; */
+            width: 90%;
+            /* height: 100%; */
+            padding: 50px 150px 150px 150px;
+            z-index: 1;
+            
+        }
+
+        .fly-away {
+            font-family: "BUTTERFLY";
+            font-size: 180px;
+            color: rgb(162, 206, 254);
+            font-variation-settings: "POST" 0;
+            position: relative;
+            cursor: pointer;
+            transition: transform 6s ease ;
+            line-height: 80%;
+            z-index: 1;
+            
+        }
+
+        @keyframes flapping {
+            0% {
+                 font-variation-settings: "POST" 0; 
+               }
+            5% {
+                 font-variation-settings: "POST" 700; 
+               }
+             10% {
+                 font-variation-settings: "POST" 0; text-shadow: 10px 10px 10px rgba(180, 219, 180, 0.7);
+               }
+            15% {
+                 font-variation-settings: "POST" 700; 
+               }
+             20% {
+                 font-variation-settings: "POST" 0; 
+               }
+             25% {
+                 font-variation-settings: "POST" 700; 
+               }
+             30% {
+                 font-variation-settings: "POST" 0; text-shadow: 30px 30px 10px rgba(180, 219, 180, 0.7);
+               }
+             35% {
+                 font-variation-settings: "POST" 700; 
+               }
+             40% {
+                 font-variation-settings: "POST" 0; 
+                }
+             45% {
+                 font-variation-settings: "POST" 700; 
+               }
+             50% {
+                 font-variation-settings: "POST" 0;
+               }
+             55% {
+                 font-variation-settings: "POST" 700; 
+               }
+             60% {
+                 font-variation-settings: "POST" 0; 
+               }
+             70% {
+                 font-variation-settings: "POST" 700; text-shadow: 15px 15px 14px rgba(180, 219, 180, 0.7);
+               }
+             80% {
+                 font-variation-settings: "POST" 0;
+               }
+             90% {
+                 font-variation-settings: "POST" 700;
+               }
+            100% {
+                 font-variation-settings: "POST" 0; 
+               }
+        }
+
+        .fly-away-hovered {
+            animation: flapping 5s ease-in-out;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <audio id="audioElement">
+        <source src="Poem.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="body-container"></div>
+        <div class="header-container" style="background-color: rgb(236, 255, 235); padding-top: 70px;"> 
+            <img src="line.png" alt="Butterfly image" class="header-container">
+            <span class="body-text" style="left: 46%; top:55%;">i l ve  ou t o</span>
+        </div>
+
+    <div class="body-container">
+        <div class="fly-away-container">
+            <!-- <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">T</span>
+            <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+            <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">b</span>
+            <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">A</span>
+            <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" onmouseenter="toggleFlyAwayClass(this)">u</span> -->
+
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">T</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">b</span>
+            <span class="fly-away" style="color: pink; letter-spacing: 40px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">A</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">u</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+ 
+            <span class="fly-away" style="letter-spacing: -10px;" onmouseenter="toggleFlyAwayClass(this)">W</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">m</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">h</span>
+            <span class="fly-away" style="color: pink; letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">Fly</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">G</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">d</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">n</span> 
+
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">T</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">b</span>
+            <span class="fly-away" style="color: pink; letter-spacing: 40px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">A</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">u</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+ 
+            <span class="fly-away" style="letter-spacing: -10px;" onmouseenter="toggleFlyAwayClass(this)">W</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">m</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">h</span>
+            <span class="fly-away" style="color: pink; letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">F</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">G</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">d</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">n</span> 
+
+            <span class="fly-away" style="letter-spacing: -10px;" onmouseenter="toggleFlyAwayClass(this)">W</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">m</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">h</span>
+            <span class="fly-away" style="color: pink; letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">F</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">G</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">d</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">n</span> 
+
+            <span class="fly-away" style="letter-spacing: -10px;" onmouseenter="toggleFlyAwayClass(this)">W</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">c</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">m</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">o</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">h</span>
+            <span class="fly-away" style="color: pink; letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">F</span>
+            <span class="fly-away" style="color: pink; ; letter-spacing: -60px;" onmouseenter="toggleFlyAwayClass(this)">l</span>
+            <span class="fly-away" style="letter-spacing: -70px;" onmouseenter="toggleFlyAwayClass(this)">i</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">t</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -20px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+
+            <span class="fly-away" style="color: pink; letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">G</span>
+            <span class="fly-away" style="letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">a</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">r</span>
+            <span class="fly-away" style="letter-spacing: -40px;" onmouseenter="toggleFlyAwayClass(this)">d</span>
+            <span class="fly-away" style="color: pink; letter-spacing: -50px;" onmouseenter="toggleFlyAwayClass(this)">e</span>
+            <span class="fly-away" style="letter-spacing: 30px;" onmouseenter="toggleFlyAwayClass(this)">n</span> 
+            
+ 
+            
+        </div>
+    </div>
+
+    <script>
+       
+
+        function toggleFlyAwayClass(myElement) {
+            
+            // Add flapping animation
+            myElement.style.animation = 'none'; // Remove the animation
+            myElement.offsetHeight; // Trigger reflow to reset animation
+            myElement.style.animation = 'flapping 6s ease-in-out'; // Re-add the animation
+
+            // Delay the random motion by 1 second
+            setTimeout(() => {
+                // Generate random positions
+                const randomX = Math.random() * 400 - 200; // Random between -200px and 200px
+                const randomY = Math.random() * 400 - 200; // Random between -200px and 200px
+
+                // Apply new position
+                myElement.style.transform = `translateX(${randomX}px) translateY(${randomY}px)`;
+            }, 300); // 1-second delay
+        }
+
+        document.body.addEventListener('click', function() {
+            var audio = document.getElementById('audioElement');
+            // Play audio if not already playing
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
